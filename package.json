@@ -1,0 +1,76 @@
+{
+  "name": "block-disposable-email",
+  "version": "1.0.0",
+  "description": "Block disposable, temporary and throwaway email addresses at signup. Express middleware + validator with an auto-updating blocklist, MX record checks and Gmail alias normalization.",
+  "keywords": [
+    "disposable email",
+    "disposable-email",
+    "temporary email",
+    "temp mail",
+    "tempmail",
+    "throwaway email",
+    "burner email",
+    "fake email",
+    "email validation",
+    "email validator",
+    "email verification",
+    "block disposable email",
+    "disposable email detector",
+    "disposable email checker",
+    "email blocklist",
+    "mx check",
+    "express",
+    "express middleware",
+    "signup",
+    "spam prevention",
+    "mailinator",
+    "10minutemail"
+  ],
+  "author": "Aditya Milan",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adityamilan/block-disposable-email.git"
+  },
+  "homepage": "https://github.com/adityamilan/block-disposable-email#readme",
+  "bugs": {
+    "url": "https://github.com/adityamilan/block-disposable-email/issues"
+  },
+  "main": "./src/index.js",
+  "types": "./src/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./src/index.d.ts",
+      "import": "./src/index.mjs",
+      "require": "./src/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "src",
+    "data/disposable_domains.txt"
+  ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "test": "node --test",
+    "update-blocklist": "node scripts/update-blocklist.js",
+    "prepublishOnly": "npm run update-blocklist && npm test"
+  },
+  "dependencies": {
+    "validator": "^13.12.0"
+  },
+  "peerDependencies": {
+    "express": ">=4"
+  },
+  "peerDependenciesMeta": {
+    "express": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "express": "^4.21.0"
+  }
+}
